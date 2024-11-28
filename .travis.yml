@@ -25,9 +25,9 @@ script:
   ##- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push thawngs2405/reverseproxy:v1.2
   - docker build -t udagram-frontend ./udagram-frontend
-  - docker tag udagram-frontend thawngs2405/udagram-frontend:v1.2
+  - docker tag udagram-frontend thawngs2405/udagram-frontend:v1.3
   ##- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push thawngs2405/udagram-frontend:v1.2
+  - docker push thawngs2405/udagram-frontend:v1.3
   #- docker images
   #- kubectl apply -f env-configmap.yaml
   #- kubectl apply -f env-secret.yaml
