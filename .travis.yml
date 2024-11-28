@@ -12,8 +12,10 @@ before_install:
 script:
   - echo "start..."
   - source set_env.sh
-  - docker-compose -f docker-compose-build.yaml build --parallel
-  - docker-compose push   # Đẩy tất cả các dịch vụ lên Docker Hub
+  - docker build -t udagram-api-feed ./udagram-api-feed
+  - docker tag udagram-api-feed thawngs2405/udagram-api-feed:v1
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push thawngs2405/udagram-api-feed:v1
   - echo "end."
 
 # Thêm thông báo (tùy chọn)
