@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend-user
-        image: thawngs2405/udagram-api-user:v1.1
+        image: thawngs2405/udagram-api-user:v2.0
         ports:
         - containerPort: 8080
         envFrom:

@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: reverseproxy-service
 spec:
-  type: LoadBalancer  # Để truy cập từ bên ngoài
+  type: LoadBalancer
   ports:
-  - port: 8080        # Cổng bên ngoài
-    targetPort: 8080  # Cổng container proxy
+  - port: 8080
+    targetPort: 8080
   selector:
     app: reverseproxy

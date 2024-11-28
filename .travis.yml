@@ -1,14 +1,12 @@
-language: docker  # Sử dụng Docker làm môi trường xây dựng
+language: docker
 
 services:
-  - docker  # Dịch vụ Docker để có thể xây dựng và chạy các container
+  - docker
 
-# Các bước trước khi cài đặt
 before_install:
   - echo "Logging into Docker Hub..."
-  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD  # Đăng nhập vào Docker Hub
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
-# Xây dựng và đẩy Docker images
 script:
   - echo "start..."
   - docker build -t udagram-api-feed ./udagram-api-feed
@@ -33,10 +31,9 @@ script:
   #- kubectl apply -f reverseproxy-deployment.yaml
   - echo "end."
 
-# Thêm thông báo (tùy chọn)
 notifications:
   email:
     recipients:
-      - thang24052001nguyen@gmail.com  # Địa chỉ email nhận thông báo
-    on_success: always  # Thông báo khi build thành công
-    on_failure: always  # Thông báo khi build thất bại
+      - thang24052001nguyen@gmail.com
+    on_success: always
+    on_failure: always

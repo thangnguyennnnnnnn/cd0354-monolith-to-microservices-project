@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: backend-feed-service
 spec:
-  type: ClusterIP  # Dịch vụ chỉ cần truy cập nội bộ
+  type: ClusterIP
   ports:
-  - port: 8080      # Cổng nội bộ cluster
-    targetPort: 8080 # Cổng trong container
+  - port: 8080
+    targetPort: 8080
   selector:
     app: backend-feed

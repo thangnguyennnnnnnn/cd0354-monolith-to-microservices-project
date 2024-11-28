@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: frontend-service
 spec:
-  type: LoadBalancer  # Để truy cập frontend từ bên ngoài
+  type: LoadBalancer
   ports:
-  - port: 80          # Cổng hiển thị bên ngoài
-    targetPort: 80    # Cổng trong container
+  - port: 80
+    targetPort: 80
   selector:
     app: frontend
