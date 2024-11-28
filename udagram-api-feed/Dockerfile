@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 ## A wildcard is used to ensure both package.json AND package-lock.json are copied where available (npm@5+)
 COPY package*.json ./
 RUN npm i -f
-RUN npm install typescript@latest --save-dev
+#RUN npm install typescript@latest --save-dev
 ## Bundle app source
 COPY . .
 EXPOSE 8080
