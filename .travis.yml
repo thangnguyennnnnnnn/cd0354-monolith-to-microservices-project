@@ -20,14 +20,14 @@ script:
   - docker tag udagram-api-user thawngs2405/udagram-api-user:v1.2
   ##- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push thawngs2405/udagram-api-user:v1.2
-  #- docker build -t reverseproxy ./udagram-reverseproxy
-  #- docker tag reverseproxy thawngs2405/reverseproxy:v1.1
+  - docker build -t reverseproxy ./udagram-reverseproxy
+  - docker tag reverseproxy thawngs2405/reverseproxy:v1.2
   ##- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  #- docker push thawngs2405/reverseproxy:v1.1
-  #- docker build -t udagram-frontend ./udagram-frontend
-  #- docker tag udagram-frontend thawngs2405/udagram-frontend:v1.1
+  - docker push thawngs2405/reverseproxy:v1.2
+  - docker build -t udagram-frontend ./udagram-frontend
+  - docker tag udagram-frontend thawngs2405/udagram-frontend:v1.2
   ##- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  #- docker push thawngs2405/udagram-frontend:v1.1
+  - docker push thawngs2405/udagram-frontend:v1.2
   #- docker images
   #- kubectl apply -f env-configmap.yaml
   #- kubectl apply -f env-secret.yaml
