@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  type: LoadBalancer  # Để truy cập frontend từ bên ngoài
+  ports:
+  - port: 80          # Cổng hiển thị bên ngoài
+    targetPort: 80    # Cổng trong container
+  selector:
+    app: frontend

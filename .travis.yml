@@ -13,22 +13,29 @@ script:
   - echo "start..."
   - source set_env.sh
   - docker build -t udagram-api-feed ./udagram-api-feed
-  - docker tag udagram-api-feed thawngs2405/udagram-api-feed:v1
+  - docker tag udagram-api-feed thawngs2405/udagram-api-feed:v1.1
   #- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push thawngs2405/udagram-api-feed:v1
+  - docker push thawngs2405/udagram-api-feed:v1.1
   - docker build -t udagram-api-user ./udagram-api-user
-  - docker tag udagram-api-user thawngs2405/udagram-api-user:v1
+  - docker tag udagram-api-user thawngs2405/udagram-api-user:v1.1
   #- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push thawngs2405/udagram-api-user:v1
+  - docker push thawngs2405/udagram-api-user:v1.1
   - docker build -t reverseproxy ./udagram-reverseproxy
-  - docker tag reverseproxy thawngs2405/reverseproxy:v1
+  - docker tag reverseproxy thawngs2405/reverseproxy:v1.1
   #- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push thawngs2405/reverseproxy:v1
+  - docker push thawngs2405/reverseproxy:v1.1
   - docker build -t udagram-frontend ./udagram-frontend
-  - docker tag udagram-frontend thawngs2405/udagram-frontend:v1
+  - docker tag udagram-frontend thawngs2405/udagram-frontend:v1.1
   #- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push thawngs2405/udagram-frontend:v1
+  - docker push thawngs2405/udagram-frontend:v1.1
   - docker images
+  - kubectl apply -f env-configmap.yaml
+  - kubectl apply -f env-secret.yaml
+  - kubectl apply -f aws-secret.yaml
+  - kubectl apply -f backend-feed-deployment.yaml
+  - kubectl apply -f backend-user-deployment.yaml
+  - kubectl apply -f frontend-deployment.yaml
+  - kubectl apply -f reverseproxy-deployment.yaml
   - echo "end."
 
 # Thêm thông báo (tùy chọn)

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  URL: "http://localhost:8100"
+  POSTGRES_HOST: "udagram.c5ybyvuoe7ki.us-east-1.rds.amazonaws.com"
+  POSTGRES_DB: "udagram"
+  AWS_BUCKET: "udagram-s3"
+  AWS_REGION: "us-east-1"
+  AWS_PROFILE: "default"
+  JWT_SECRET: "testing"
