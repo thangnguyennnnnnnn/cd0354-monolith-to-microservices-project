@@ -6,9 +6,19 @@ import {config} from './config/config';
 const credentials = new AWS.SharedIniFileCredentials({profile: config.aws_profile});
 AWS.config.credentials = credentials;
 
+//export const s3 = new AWS.S3({
+//  signatureVersion: 'v4',
+//  region: config.aws_region,
+//  params: {Bucket: config.aws_media_bucket},
+//});
+
 export const s3 = new AWS.S3({
   signatureVersion: 'v4',
-  region: config.aws_region,
+  region: config.aws_region, // Khu vực của bucket S3
+  credentials: new AWS.Credentials({
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  }),
   params: {Bucket: config.aws_media_bucket},
 });
 
