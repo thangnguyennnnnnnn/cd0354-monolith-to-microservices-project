@@ -10,23 +10,23 @@ before_install:
 
 # Xây dựng và đẩy Docker images
 script:
-  - echo "start..."
+  #- echo "start..."
   - source set_env.sh
   - docker build -t udagram-api-feed ./udagram-api-feed
-  - docker tag udagram-api-feed thawngs2405/udagram-api-feed:v1.2
-  #- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push thawngs2405/udagram-api-feed:v1.2
-  - docker build -t udagram-api-user ./udagram-api-user
-  - docker tag udagram-api-user thawngs2405/udagram-api-user:v1.2
+  - docker tag udagram-api-feed thawngs2405/udagram-api-feed:v1.3
   ##- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push thawngs2405/udagram-api-user:v1.2
-  - docker build -t reverseproxy ./udagram-reverseproxy
-  - docker tag reverseproxy thawngs2405/reverseproxy:v1.2
-  ##- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push thawngs2405/reverseproxy:v1.2
-  - docker build -t udagram-frontend ./udagram-frontend
-  - docker tag udagram-frontend thawngs2405/udagram-frontend:v1.3
-  ##- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push thawngs2405/udagram-api-feed:v1.3
+  #- docker build -t udagram-api-user ./udagram-api-user
+  #- docker tag udagram-api-user thawngs2405/udagram-api-user:v1.2
+  ###- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  #- docker push thawngs2405/udagram-api-user:v1.2
+  #- docker build -t reverseproxy ./udagram-reverseproxy
+  #- docker tag reverseproxy thawngs2405/reverseproxy:v1.2
+  ###- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  #- docker push thawngs2405/reverseproxy:v1.2
+  #- docker build -t udagram-frontend ./udagram-frontend
+  #- docker tag udagram-frontend thawngs2405/udagram-frontend:v1.3
+  ###- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push thawngs2405/udagram-frontend:v1.3
   #- docker images
   #- kubectl apply -f env-configmap.yaml
