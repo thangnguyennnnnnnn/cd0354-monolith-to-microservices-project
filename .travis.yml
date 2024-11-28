@@ -10,9 +10,11 @@ before_install:
 
 # Xây dựng và đẩy Docker images
 script:
-  - echo "Building Docker image for udagram-api-user..."
+  - echo "start..."
+  - source set_env.sh
   - docker-compose -f docker-compose-build.yaml build --parallel
   - docker-compose push   # Đẩy tất cả các dịch vụ lên Docker Hub
+  - echo "end."
 
 # Thêm thông báo (tùy chọn)
 notifications:
