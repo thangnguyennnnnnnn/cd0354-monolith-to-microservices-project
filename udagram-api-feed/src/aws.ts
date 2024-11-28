@@ -33,6 +33,7 @@ export function getGetSignedUrl( key: string ): string {
   const signedUrlExpireSeconds = 60 * 5;
   console.log('-----------------------------' + key);
   console.log(config.aws_media_bucket);
+  console.log(process.env.AWS_ACCESS_KEY_ID);
   let url = s3.getSignedUrl('getObject', {
     Bucket: config.aws_media_bucket,
     Key: key,
