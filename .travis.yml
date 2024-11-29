@@ -10,18 +10,18 @@ before_install:
 script:
   - echo "start..."
   - docker build -t udagram-api-feed ./udagram-api-feed
-  - docker tag udagram-api-feed thawngs2405/udagram-api-feed:v2.0
-  - docker push thawngs2405/udagram-api-feed:v2.0
-  - docker build -t udagram-api-user ./udagram-api-user
-  - docker tag udagram-api-user thawngs2405/udagram-api-user:v2.0
-  - docker push thawngs2405/udagram-api-user:v2.0
-  - docker build -t reverseproxy ./udagram-reverseproxy
-  - docker tag reverseproxy thawngs2405/reverseproxy:v2.0
-  - docker push thawngs2405/reverseproxy:v2.0
-  - docker build -t udagram-frontend ./udagram-frontend
-  - docker tag udagram-frontend thawngs2405/udagram-frontend:v2.0
-  - docker push thawngs2405/udagram-frontend:v2.0
-  - docker images
+  - docker tag udagram-api-feed thawngs2405/udagram-api-feed:v2.1
+  - docker push thawngs2405/udagram-api-feed:v2.1
+  #- docker build -t udagram-api-user ./udagram-api-user
+  #- docker tag udagram-api-user thawngs2405/udagram-api-user:v2.0
+  #- docker push thawngs2405/udagram-api-user:v2.0
+  #- docker build -t reverseproxy ./udagram-reverseproxy
+  #- docker tag reverseproxy thawngs2405/reverseproxy:v2.0
+  #- docker push thawngs2405/reverseproxy:v2.0
+  #- docker build -t udagram-frontend ./udagram-frontend
+  #- docker tag udagram-frontend thawngs2405/udagram-frontend:v2.0
+  #- docker push thawngs2405/udagram-frontend:v2.0
+  #- docker images
   #- kubectl apply -f env-configmap.yaml
   #- kubectl apply -f env-secret.yaml
   #- kubectl apply -f aws-secret.yaml
