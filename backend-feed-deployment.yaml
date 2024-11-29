@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend-feed
-        image: thawngs2405/udagram-api-feed:v2.0
+        image: thawngs2405/udagram-api-feed:v2.1
         ports:
         - containerPort: 8080
         envFrom:
@@ -35,3 +35,10 @@ spec:
                 key: aws_secret_access_key
           - name: AWS_REGION
             value: "us-east-1"
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "2048Mi"
+          limits:
+            cpu: "1000m"
+            memory: "10240Mi"

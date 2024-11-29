@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend-user
-        image: thawngs2405/udagram-api-user:v2.0
+        image: thawngs2405/udagram-api-user:v2.1
         ports:
         - containerPort: 8080
         envFrom:
@@ -22,3 +22,10 @@ spec:
             name: app-config
         - secretRef:
             name: db-credentials
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "2048Mi"
+          limits:
+            cpu: "1000m"
+            memory: "10240Mi"
